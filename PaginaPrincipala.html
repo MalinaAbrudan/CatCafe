@@ -1,0 +1,167 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <title>Cat cafe - Cluj Napoca</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="principal.css">
+</head>
+
+<body>
+    <h1 id="numeProfil">Welcome to Cat-Cafe Cluj Napoca</h1>
+    <h4 ondblclick="changeToSlideshow()">Prezentarea cafenelei noastre</h4>
+    <div class="gallery-container" id="galerie">
+        <div class="gallery">
+            <a target="_blank"
+                href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-gzWmPJr8USUE8l__7fzmcyM5DFE1gWHSzA&usqp=CAU">
+                <div style="display: flex; justify-content: center;">
+                    <img src="https://media-cdn.tripadvisor.com/media/photo-m/1280/1b/82/86/14/very-nice-and-stylish.jpg"
+                    alt="1" style="width: 300px; height: auto;">
+                </div>
+            </a>
+            <div class="desc">Contact</div>
+        </div>
+        <div class="gallery">
+            <a target="_blank"
+                href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-gzWmPJr8USUE8l__7fzmcyM5DFE1gWHSzA&usqp=CAU">
+                <div style="display: flex; justify-content: center;">
+                    <img src="https://thumbs.dreamstime.com/b/cat-cafe-tokyo-akihabara-japan-cat-cafe-tokyo-japan-162280510.jpg"
+                    alt="1" style="width: 300px; height: auto;">
+                </div>
+            </a>
+            <div class="desc">Pisicile noastra</div>
+        </div>
+        <div class="gallery">
+            <a target="_blank"
+                href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-gzWmPJr8USUE8l__7fzmcyM5DFE1gWHSzA&usqp=CAU">
+                <div style="display: flex; justify-content: center;">
+                    <img src="https://media-cdn.tripadvisor.com/media/photo-w/1b/82/87/ed/img-20200630-101640-354.jpg"
+                    alt="1" style="width: 300px; height: 200px;">
+                </div>
+            </a>
+            <div class="desc">Mancarea noastra</div>
+        </div>
+    </div>
+    <div class="slideshow-container" id="slideshow-pisici" style="display: none">
+
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 3</div>
+            <img src="https://media-cdn.tripadvisor.com/media/photo-m/1280/1b/82/86/14/very-nice-and-stylish.jpg"
+                style="width:100%">
+            <div class="text">
+                <a
+                    href="https://media-cdn.tripadvisor.com/media/photo-m/1280/1b/82/86/14/very-nice-and-stylish.jpg">Contact</a>
+            </div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">2 / 3</div>
+            <img src="https://thumbs.dreamstime.com/b/cat-cafe-tokyo-akihabara-japan-cat-cafe-tokyo-japan-162280510.jpg"
+                style="width:100%">
+            <div class="text">
+                <a href="Pisicutele%20noastre.html">Pisicutele noastre </a>
+            </div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">3 / 3</div>
+            <img src="https://media-cdn.tripadvisor.com/media/photo-w/1b/82/87/ed/img-20200630-101640-354.jpg"
+                style="width:100%">
+            <div class="text">
+                <a href=""> Mancarea noastra </a>
+            </div>
+        </div>
+
+    </div>
+    <br>
+
+    <div style="text-align:center; display: none;">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+
+
+
+    <script>
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            setTimeout(showSlides, 3000);
+        }
+
+        // const miau = document.querySelector('galerie');
+
+        function changeToSlideshow() {
+            const slideShow = document.getElementById("slideshow-pisici");
+            const galerie = document.getElementById("galerie");
+            if (slideShow.style.display === "none") {
+                slideShow.style.display = 'block';
+                galerie.style.display = "none";
+            }
+            else {
+                slideShow.style.display = 'none';
+                galerie.style.display = "flex";
+            }
+            
+        }
+    </script>
+    <div>
+        <h2>Facilitatile noastre</h2>
+        <table id="tabelFacilitati">
+            <tr>
+                <th>Facilitate</th>
+                <th>Link</th>
+            </tr>
+            <tr>
+                <td>Pisici jucause si prietenoase</td>
+                <td>
+                    <a href="#">Link</a>
+                </td>
+            </tr>
+            <tr>
+                <td>Mancare si cafea buna</td>
+                <td>
+                    <a href="#">Link</a>
+                </td>
+            </tr>
+            <tr>
+                <td>Un loc prietenos pentru copii</td>
+                <td>
+                    <a href="#">Link</a>
+                </td>
+            </tr>
+            <tr>
+                <td>Preturi accesibile si voie buna</td>
+                <td>
+                    <a href="#">Link</a>
+                </td>
+            </tr>
+        </table>
+
+        <h2>Cafeneaua noastra beneficiaza de: </h2>
+
+        <ul>
+            <li>16 pisicute dragalase</li>
+            <li>Ambianta calduroasa</li>
+            <li>24 de mese si canapele comfortabile</li>
+        </ul>
+    </div>
+
+</body>
+
+</html>
